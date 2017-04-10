@@ -1,0 +1,8 @@
+src/main/resources/*
+
+### Gradle ###
+.gradle
+build
+
+### IntelliJ IDEA ###
+.idea

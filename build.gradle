@@ -1,0 +1,16 @@
+group 'ahuglajbclajep.sampapp.payara.micro'
+version '1.0'
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'fish.payara.extras:payara-micro:4.1.153'
+}
