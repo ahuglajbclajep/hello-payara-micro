@@ -10,6 +10,7 @@ cd hello-payara-micro
 ```sh
 ./gradlew run
 ```
+If you're OS is Windows, please read `./gradlew` as `gradlew.bat`  
 Server stop command is `ctrl + c`
 
 ### Check
@@ -34,7 +35,7 @@ If you want to distribute this,
 ```sh
 ./gradlew uberZip
 ```
-zip file *containing the launcher scripts* will be created in `./build/distributions/`
+zip file **containing the launcher scripts** will be created in `./build/distributions/`
 
 ## Licence
 [Apache-2.0](LICENSE)
