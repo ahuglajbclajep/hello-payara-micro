@@ -1,1 +1,2 @@
-test
+#!/usr/bin/env bash
+java -jar hello-payara-micro.jar
