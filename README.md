@@ -10,22 +10,31 @@ cd hello-payara-micro
 ```sh
 ./gradlew run
 ```
-server stop command is `ctrl + c`
+Server stop command is `ctrl + c`
 
 ### Check
+Access to [http://localhost:8080](http://localhost:8080)
 ```sh
 firefox http://localhost:8080 &
 ```
 
-## UberJar
+## UberJar & UberZip
+UberJar document is [here](https://payara.gitbooks.io/payara-server/content/documentation/payara-micro/configuring/package-uberjar.html)
 ### Build
 ```sh
 ./gradlew uberJar
 ```
 ### Run
 ```sh
-java -jar ./build/libs/ROOT.jar
+java -jar ./build/libs/hello-payara-micro.jar
 ```
+
+### Distribute
+If you want to distribute this,
+```sh
+./gradlew uberZip
+```
+zip file *containing the launcher scripts* will be created in `./build/distributions/`
 
 ## Licence
 [Apache-2.0](LICENSE)
