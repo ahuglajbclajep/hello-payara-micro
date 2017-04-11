@@ -9,12 +9,23 @@ targetCompatibility = 1.8
 
 repositories.mavenCentral()
 dependencies {
-    providedCompile 'fish.payara.extras:payara-micro:4.1.153'
+    providedCompile 'fish.payara.extras:payara-micro:4.1.1.171.1'
 }
 
+war.setBaseName('ROOT')
 war.setVersion('')
 
-task payaraRun(type: Exec, dependsOn: war) {
+task runMicro(type: Exec, dependsOn: war) {
+    def payaraJarPath = configurations
+            .providedCompile
+            .find {it.name =~ /payara-micro.*\.jar/}
+            .absolutePath
+
+    def warFile = war.archivePath
+    commandLine('java', '-jar', payaraJarPath, '--deploy', warFile)
+}
+
+task uberJar(type: Exec, dependsOn: war) {
     def payaraJarPath = configurations
             .providedCompile
             .find {it.name =~ /payara-micro.*\.jar/}
