@@ -7,10 +7,11 @@ apply plugin: 'war'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-repositories {
-    mavenCentral()
-}
+repositories.mavenCentral()
 
 dependencies {
     providedCompile 'fish.payara.extras:payara-micro:4.1.153'
 }
+
+war.setBaseName("ROOT")
+war.setVersion('')
