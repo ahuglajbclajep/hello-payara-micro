@@ -21,7 +21,7 @@ task run(type: Exec, dependsOn: war) {
 
 println rootProject.name
 task uberJar(type: Exec, dependsOn: war) {
-    String uberJarPath = rootProject.name + '.jar'
+    String uberJarPath = 'build/libs/' + rootProject.name + '.jar'
     commandLine('java', '-jar', getMicroPath(), '--deploy', war.archivePath, '--outputUberJar', uberJarPath)
 }
 
