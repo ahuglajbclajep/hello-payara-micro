@@ -1,3 +1,5 @@
+package ahuglajbclajep.sampapp.payara.micro.runner;
+
 import fish.payara.micro.BootstrapException;
 import fish.payara.micro.PayaraMicro;
 
