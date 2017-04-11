@@ -16,23 +16,15 @@ war.setBaseName('ROOT')
 war.setVersion('')
 
 task run(type: Exec, dependsOn: war) {
-    def payaraJarPath = configurations
-            .providedCompile
-            .find {it.name =~ /payara-micro.*\.jar/}
-            .absolutePath
-
-    def warFile = war.archivePath
-    commandLine('java', '-jar', payaraJarPath, '--deploy', warFile)
+    commandLine('java', '-jar', getMicroPath(), '--deploy', war.archivePath)
 }
 
+println rootProject.name
 task uberJar(type: Exec, dependsOn: war) {
-    def payaraJarPath = configurations
-            .providedCompile
-            .find {it.name =~ /payara-micro.*\.jar/}
-            .absolutePath
+    String uberJarPath = rootProject.name + '.jar'
+    commandLine('java', '-jar', getMicroPath(), '--deploy', war.archivePath, '--outputUberJar', uberJarPath)
+}
 
-    def warFile = war.archivePath
-    def uberJarPath = warFile.path.replaceAll(/\.war$/, '.jar')
-
-    commandLine('java', '-jar', payaraJarPath, '--deploy', warFile, '--outputUberJar', uberJarPath)
+def String getMicroPath() {
+    configurations.providedCompile.find { it.name =~ /payara-micro.*\.jar/ }.absolutePath
 }
