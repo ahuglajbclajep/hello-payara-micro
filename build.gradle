@@ -19,7 +19,6 @@ task run(type: Exec, dependsOn: war) {
     commandLine('java', '-jar', getMicroPath(), '--deploy', war.archivePath)
 }
 
-println rootProject.name
 task uberJar(type: Exec, dependsOn: war) {
     String uberJarPath = 'build/libs/' + rootProject.name + '.jar'
     commandLine('java', '-jar', getMicroPath(), '--deploy', war.archivePath, '--outputUberJar', uberJarPath)
@@ -27,4 +26,9 @@ task uberJar(type: Exec, dependsOn: war) {
 
 def String getMicroPath() {
     configurations.providedCompile.find { it.name =~ /payara-micro.*\.jar/ }.absolutePath
+}
+
+task uberZip(type: Zip, dependsOn: uberJar) {
+    from 'build/libs/hello-payara-micro.jar'
+    from 'src/launcher'
 }
