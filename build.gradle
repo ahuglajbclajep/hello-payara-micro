@@ -15,7 +15,7 @@ dependencies {
 war.setBaseName('ROOT')
 war.setVersion('')
 
-task runMicro(type: Exec, dependsOn: war) {
+task run(type: Exec, dependsOn: war) {
     def payaraJarPath = configurations
             .providedCompile
             .find {it.name =~ /payara-micro.*\.jar/}
