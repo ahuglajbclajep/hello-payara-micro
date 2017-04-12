@@ -1,1 +1,6 @@
-java -jar hello-payara-micro.jar
+@echo off
+java -version
+echo ================
+for %%i in (*.jar) do (
+java -jar %%i
+)
