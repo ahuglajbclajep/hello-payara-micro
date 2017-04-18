@@ -1,5 +1,5 @@
 @echo off
 java -version
 for %%i in (*.jar) do (
-java -jar %%i
+java -jar %%i --logtofile log
 )

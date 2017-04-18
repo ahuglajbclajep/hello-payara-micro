@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 java -version
-java -jar *.jar
+java -jar *.jar --logtofile log
