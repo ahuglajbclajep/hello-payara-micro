@@ -37,5 +37,5 @@ If you want to distribute this,
 ```
 zip file **containing the launcher scripts** will be created in `./build/distributions/`.
 
-## Licence
+## License
 [Apache-2.0](LICENSE)
