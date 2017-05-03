@@ -32,3 +32,8 @@ task uberZip(type: Zip, dependsOn: uberJar) {
     from 'build/libs/hello-payara-micro.jar'
     from 'src/launcher'
 }
+
+task zip(type: Exec) {
+    commandLine('git', 'archive', '-o', 'build/' + rootProject.name + '_src.zip', 'HEAD')
+    // This task will fail if the 'build' folder does not exist.
+}
