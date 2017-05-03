@@ -19,7 +19,7 @@ Access to [http://localhost:8080](http://localhost:8080).
 firefox http://localhost:8080 &
 ```
 
-## UberJar & UberZip
+## UberJar
 UberJar document is [here](https://payara.gitbooks.io/payara-server/content/documentation/payara-micro/configuring/package-uberjar.html).
 ### Build
 ```sh
@@ -30,12 +30,18 @@ UberJar document is [here](https://payara.gitbooks.io/payara-server/content/docu
 java -jar ./build/libs/hello-payara-micro.jar
 ```
 
-### Distribute
+## Distribute
 If you want to distribute this,
 ```sh
 ./gradlew uberZip
 ```
 zip file **containing the launcher scripts** will be created in `./build/distributions/`.
+
+For source code only,
+```
+./gradlew zip
+```
+zip file that **does not contain unnecessary files** will be created in `./build/`.
 
 ## License
 [Apache-2.0](LICENSE)
