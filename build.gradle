@@ -1,4 +1,4 @@
-group 'ahuglajbclajep.sampapp.payara.micro'
+group 'ahuglajbclajep.payara.micro'
 version '1.0.0'
 
 apply plugin: 'java'
