@@ -29,7 +29,7 @@ def String getMicroPath() {
 }
 
 task uberZip(type: Zip, dependsOn: uberJar) {
-    from 'build/libs/hello-payara-micro.jar'
+    from 'build/libs/' + rootProject.name + '.jar'
     from 'src/launcher'
 }
 
